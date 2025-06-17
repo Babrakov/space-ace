@@ -11,7 +11,14 @@ const TEXTURES: Dictionary = {
 	PowerUpType.Shield: preload("res://assets/misc/shield_gold.png"),
 }
 
+@onready var sprite_2d: Sprite2D = $Sprite2D
 @onready var sound: AudioStreamPlayer2D = $Sound
 
 var power_up_type: PowerUpType = PowerUpType.Shield:
 	get: return power_up_type
+
+func _ready() -> void:
+	sprite_2d.texture = TEXTURES[power_up_type]
+
+func _process(delta: float) -> void:
+	position += Vector2.DOWN * delta * SPEED
