@@ -1,7 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://dgvrgknpeqxjl"]
+[gd_scene load_steps=9 format=3 uid="uid://dgvrgknpeqxjl"]
 
 [ext_resource type="PackedScene" uid="uid://bxccw5j4y2gmx" path="res://Scenes/Bullets/BulletBase.tscn" id="1_kbwl6"]
 [ext_resource type="Texture2D" uid="uid://cdbm8frqf8tqn" path="res://assets/lasers/circle_bomb_red-Sheet.png" id="2_k373f"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_k373f"]
+radius = 8.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_o1s6j"]
 atlas = ExtResource("2_k373f")
@@ -46,6 +49,10 @@ collision_mask = 33
 [node name="Sprite2D" parent="." index="0"]
 visible = false
 
+[node name="CollisionShape2D" parent="." index="1"]
+shape = SubResource("CircleShape2D_k373f")
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="4"]
+scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_kbwl6")
 autoplay = "default"
