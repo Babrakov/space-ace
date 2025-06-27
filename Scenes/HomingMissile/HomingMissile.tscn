@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://gv08gcwcaelq"]
+[gd_scene load_steps=8 format=3 uid="uid://gv08gcwcaelq"]
 
 [ext_resource type="PackedScene" uid="uid://bo58q6ywoxccr" path="res://Scenes/Projectile/Projectile.tscn" id="1_atcv3"]
 [ext_resource type="Texture2D" uid="uid://bqywi64wvxcqj" path="res://assets/lasers/spaceMissiles_040.png" id="2_028iy"]
+[ext_resource type="Script" uid="uid://b1shf5ug6o7co" path="res://Scenes/HomingMissile/HomingMissile.gd" id="2_ufj55"]
 [ext_resource type="Texture2D" uid="uid://b0hlsmrvemel0" path="res://assets/misc/ParticleDot.png" id="3_m0p1j"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_028iy"]
@@ -18,6 +19,7 @@ colors = PackedColorArray(1.7, 0.5, 0, 1, 2, 2, 0.04, 1)
 [node name="HomingMissile" instance=ExtResource("1_atcv3")]
 collision_layer = 4
 collision_mask = 3
+script = ExtResource("2_ufj55")
 
 [node name="Sprite2D" parent="." index="0"]
 rotation = 1.5708
