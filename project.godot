@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="SpaceAce"
+config/name="Space Ace"
 config/description="Starter pack"
 run/main_scene="uid://2ajn46ojd0r2"
 config/features=PackedStringArray("4.4", "Mobile")
