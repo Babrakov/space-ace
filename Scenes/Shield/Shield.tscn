@@ -7,6 +7,21 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_sngbc"]
 radius = 30.0167
 
+[sub_resource type="Animation" id="Animation_nlrep"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
 [sub_resource type="Animation" id="Animation_djkv3"]
 resource_name = "hit"
 length = 0.2
@@ -24,21 +39,6 @@ tracks/0/keys = {
 "values": [Color(1, 1, 1, 1), Color(1, 0, 0, 1), Color(1, 1, 1, 1)]
 }
 
-[sub_resource type="Animation" id="Animation_nlrep"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:self_modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_nlrep"]
 _data = {
 &"RESET": SubResource("Animation_nlrep"),
@@ -46,6 +46,8 @@ _data = {
 }
 
 [node name="Shield" type="Area2D"]
+collision_layer = 32
+collision_mask = 4
 script = ExtResource("1_nlrep")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -57,7 +59,7 @@ texture = ExtResource("1_sngbc")
 shape = SubResource("CircleShape2D_sngbc")
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 5.0
+wait_time = 3.0
 one_shot = true
 
 [node name="Sound" type="AudioStreamPlayer2D" parent="."]
@@ -67,3 +69,6 @@ stream = ExtResource("2_djkv3")
 libraries = {
 &"": SubResource("AnimationLibrary_nlrep")
 }
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
