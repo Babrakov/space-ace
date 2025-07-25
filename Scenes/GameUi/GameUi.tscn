@@ -42,3 +42,5 @@ layout_mode = 2
 size_flags_horizontal = 8
 text = "00000"
 label_settings = ExtResource("2_anolp")
+
+[connection signal="died" from="ColorRect/MarginContainer/HealthBar" to="." method="_on_health_bar_died"]
