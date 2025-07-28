@@ -1,6 +1,6 @@
 extends Node
 
-
+signal on_player_health_bonus(v: int)
 signal on_player_hit(v: int)
 signal on_score_updated(v: int)
 signal on_create_explosion(pos: Vector2, anim_name: String)
@@ -35,3 +35,6 @@ func emit_on_score_updated(v: int):
 
 func emit_on_create_explosion(pos: Vector2, anim_name: String):
 	on_create_explosion.emit(pos, anim_name)
+
+func emit_on_player_health_bonus(v: int):
+	on_player_health_bonus.emit(v)
