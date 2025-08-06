@@ -147,13 +147,8 @@ animations = [{
 
 [node name="EnemyBio" instance=ExtResource("1_agfk1")]
 shoots_at_player = true
-aims_at_player = false
-bullet_type = 1
-bullet_speed = 120.0
-bullet_direction = Vector2(0, 1)
 bullet_wait_time = 2.0
 bullet_wait_time_var = 0.2
-power_up_chance = 0.9
 
 [node name="HealthBar" parent="." index="3"]
 offset_left = -14.0
