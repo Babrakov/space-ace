@@ -17,5 +17,5 @@ func _ready() -> void:
 func setup(anim_name: String) -> void:
 	_anim_name = anim_name
 
-func _on_animation_finished() -> void:
+func _on_animated_sprite_2d_animation_finished() -> void:
 	queue_free()

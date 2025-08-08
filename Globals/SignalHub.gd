@@ -11,7 +11,10 @@ signal on_create_bullet(
 	dir: Vector2, 
 	speed: float, 
 	bull_type: BulletBase.BulletType)
+signal on_create_homing_missile(pos: Vector2)
 
+func emit_on_create_homing_missile(pos: Vector2):
+	on_create_homing_missile.emit(pos)
 
 func emit_on_create_bullet(pos: Vector2, 
 	dir: Vector2, 
