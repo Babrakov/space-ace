@@ -1,5 +1,6 @@
 extends Node
 
+signal on_player_died
 signal on_player_health_bonus(v: int)
 signal on_player_hit(v: int)
 signal on_score_updated(v: int)
@@ -12,6 +13,9 @@ signal on_create_bullet(
 	speed: float, 
 	bull_type: BulletBase.BulletType)
 signal on_create_homing_missile(pos: Vector2)
+
+func emit_on_player_died():
+	on_player_died.emit()
 
 func emit_on_create_homing_missile(pos: Vector2):
 	on_create_homing_missile.emit(pos)
