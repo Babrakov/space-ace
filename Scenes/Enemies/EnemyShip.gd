@@ -66,3 +66,6 @@ func die() -> void:
 
 func _on_laser_timer_timeout() -> void:
 	shoot()
+
+func setup(speed: float) -> void:
+	_speed = speed
